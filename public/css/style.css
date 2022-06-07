@@ -1,0 +1,571 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Exo 2';
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    background-color: white;
+    color: black;
+    background-size: cover;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+.container_header {
+    width: 80%;
+    margin: auto;
+}
+
+.header .container_header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header a {
+    text-decoration: none;
+    color: rgb(230, 230, 230);
+}
+
+.agora {
+    font-weight: 800;
+}
+
+.navbar {
+    width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    list-style: none;
+    color: rgb(0, 38, 255);
+}
+
+/* BANNER */
+
+.banner {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-image: url(".././assets/imgs/banner_inicial.png");
+    background-size: cover;
+    background-position: bottom;
+}
+
+
+.banner .container {
+    display: flex;
+    align-items: center;
+}
+
+.banner p {
+    width: 50%;
+    margin: 0;
+    padding: 0;
+    width: 280px;
+    font-size: 36px;
+    margin-left: 350px;
+}
+
+.banner span {
+    font-weight: 800;
+}
+
+.star{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    animation: animate1 8s ease-in-out infinite,
+               backgroundmove 16s linear infinite;
+}
+
+.banner .header{
+    margin-top: 20px;
+    margin-left: 600px;
+    position: fixed;
+    z-index: 1000;
+}
+
+/* missao visao valores */
+
+.social {
+    margin-top: 50px;
+    margin-bottom: 10px;
+    padding: 50px 0;
+}
+.social .container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+.gc .container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.social .titulo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.social h1 {
+    display: flex;
+    padding: 20px;
+    background-color: white;
+    border-radius: 20px;
+    align-self: center; 
+    justify-self: center;
+    text-align: center;
+    color: rgb(255, 0, 0);
+    margin: 0;
+}
+
+.social .boxes {
+    display: flex;
+}
+.gc .boxes{
+    display: flex;
+}
+.social .box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    width: 33%;
+}
+.gc .box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    width: 33%;
+}
+
+.social .box img {
+    width: 200px;
+    align-self: center;
+}
+
+.social .box h3 {
+    color: rgb(0, 38, 255);
+    margin-top: 30px;
+}
+
+.gc h1{
+    color: rgb(255, 0, 0);
+    align-self: center;
+}
+
+.gc h2{
+    color: rgb(0, 38, 255);
+}
+
+.gc .box h1{
+    color: rgb(0, 38, 255);
+    align-self: center;
+}
+
+.gc {
+    margin-bottom: 100px;
+}
+
+.gc .box{
+    margin: 15px;
+}
+
+.gc .box{
+    background-color: snow;
+    border-radius: 35px;
+    border: 1.5px rgb(0, 38, 255) solid;
+    padding: 20px;
+}
+
+.gc .boxes{
+    margin-bottom: 50px;
+}
+
+.gc #box2 h1{
+    color: rgb(0, 38, 255);
+}
+.gc #box2{
+    border-radius: 25px;
+    background-color: snow;
+    border: 1.5px solid rgb(0, 38, 255);
+    
+}
+
+/* FOOTER */
+.footer {
+    background-color: rgb(0, 38, 255);
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    height: 100px;
+}
+
+.footer_login {
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    height: 100px;
+}
+
+.footer .container {
+    display: flex;
+    justify-content: center;
+}
+
+h4 {
+    margin: 0;
+    padding: 0;
+}
+
+/* LOGIN */
+.banner-cadastro {
+    position: relative;
+    height: 130vh;
+    width: 100%;
+    background-image: url(".././assets/imgs/banner_cadastro.jpg");
+    background-size: cover;
+}
+.banner-login {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-image: url(".././assets/imgs/banner_login.jfif");
+    background-size: cover;
+}
+
+.banner-login .container {
+    position: relative;
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255,255,255,0.5);
+    border-right: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    margin-top: 40px;
+}
+.banner-login a {
+    color: white;
+    text-decoration: none;
+}
+
+.banner-login #div_erros_login {
+    margin-top: 15px;
+}
+.banner-cadastro .container {
+    position: relative;
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255,255,255,0.5);
+    border-right: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    margin-top: 40px;
+}
+.banner-cadastro a {
+    color: white;
+    text-decoration: none;
+}
+
+.banner-cadastro #div_erros_login {
+    margin-top: 15px;
+}
+
+.button {
+    cursor: pointer;
+}
+
+/* FORMULARIO */
+.formulario input {
+    height: 25px;
+    background: rgba(255,255,255,0.2);
+    outline: none;
+    border-radius: 35px;
+    border: 1px solid rgba(255,255,255,0.5);
+    border-right: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba( 0, 0, 0, 0.05);
+    padding: 5px;
+}
+
+.formulario input::placeholder{
+    color: #fff;
+}
+
+.formulario select{    
+    height: 30px;
+    background: rgba(255,255,255,0.2);
+    outline: none;
+    border-radius: 35px;
+    border: 1px solid rgba(255,255,255,0.5);
+    border-right: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: white;
+    box-shadow: 0 5px 15px rgba( 0, 0, 0, 0.05);
+}
+.formulario select option{
+    outline: none;
+    color: rgb(0, 38, 255);
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+.btn {
+    font-family: 'Exo 2', sans-serif;
+    border: none;
+    border-radius: 35px;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 10px 15px;
+    color: rgb(0, 38, 255);
+    background-color: white;
+    width: 120px;
+    align-self: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.loading-div {
+    width: 50px;
+    margin: auto;
+    display: none;
+}
+
+.loading-div img {
+    height: 50px;
+    width: 50px;
+}
+
+/* PAGINA DOS GRÁFICOS */
+
+.janela {
+    display: flex;
+    width: 100vw;
+    /* height: 100vh; */
+}
+
+.header-left a {
+    text-decoration: none;
+    color: white;
+}
+
+.header-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    height: 100vh;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-right: 3px solid #32B9CD;
+    background-color: #212124;
+}
+
+.dash-right {
+    display: flex;
+    width: 75%;
+    height: fit-content;
+    background-color: #161618;
+    position: relative;
+    top: 0;
+    left: 25%;
+}
+
+.header-left h1 {
+    color: #32B9CD;
+}
+
+.hello {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.hello h3 {
+    color: #E3B062;
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+
+.hello h3 span {
+    font-weight: 800;
+}
+
+.btn-nav {
+    width: 40%;
+    color: white;
+    background-color: #E6005A;
+    border-radius: 5px;
+    text-align: center;
+    padding: 2% 5%;
+}
+
+.btn-nav-white {
+    font-family: 'Exo 2', sans-serif;
+    border: none;
+    border-radius: 35px;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 10px 15px;
+    color: indigo;
+    background-color: white;
+    width: 80%;
+    align-self: center;
+}
+
+.btn-nav-white h3 {
+    color: #E6005A;
+    padding: 0;
+    margin: 0;
+}
+
+
+.btn-nav h3, .btn-logout h3 {
+    margin: 0;
+    padding: 0;
+}
+
+.btn-logout {
+    margin: 0;
+    padding: 0;
+    width: 20%;
+    background-color: #32B9CD;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px 15px;
+    margin-bottom: 100px;
+    cursor: pointer;
+}
+
+/* Página - História */
+.historia {
+    color: black;
+    margin: 50px 0px 100px 0px;
+}
+
+.historia h2{
+    color: rgb(255, 0, 0);
+}
+
+
+/* Início MENU HAMBURGUER */
+nav ul a{
+    text-decoration: none;
+    padding: 15px 5px;
+    display: block;
+    color: white;
+}
+
+nav ul a:hover{
+    color: darkorchid;
+}
+
+nav ul {
+    padding-left: 10px;
+    list-style: none;
+    top: 50px;
+    position: absolute;
+    width: 100%;
+}
+
+label{
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+}
+
+label img{
+    height: 50px;
+}
+
+input[type="checkbox"]{
+    display: none;
+}
+
+input[type="checkbox"]:checked ~ nav{
+    /* mexer no eixo X na horizontal */
+    transform: translateX(350px);
+}
+
+nav{
+    width: 250px;
+    height: 100%;
+    background: url(../assets/imgs/bg_login.jpg);
+    left: -350px;
+    position: absolute;
+    transition: all .5s;
+    border-radius: 35px;
+    border: 1px solid whitesmoke;
+    padding: 15px;
+}
+
+nav h3 {
+    color: darkmagenta;
+}
+nav h4 {
+    color: indigo;
+}
+/* Fim MENU HAMBURGUER */
+
+.inicial{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 21px;
+    text-align: center;
+    background: url(../assets/imgs/stars.png);
+    background-repeat: no-repeat;
+}
+
+.inicial h1{
+    font-size: 70px;
+}
+.inicial h2{
+    font-size: 40px;
+    color: deeppink;
+}
+.content img{
+    height: 500px;
+}
+.content h1{
+    color: darkmagenta;
+}
+
+.content h3{
+    color: deeppink;
+}

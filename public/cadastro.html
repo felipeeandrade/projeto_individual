@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GranMania | Cadastro</title>
+
+    
+    <script src="./assets/js/funcoes.js"></script>
+    
+    
+    <link rel="icon" href="./assets/icon/icon_gc.png">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body onload="tudo()">
+    
+    <div class="banner-cadastro">
+            <!--header inicio-->
+            <div class="header">
+                <div class="container_header">
+                    <img src="assets/imgs/logo.png"  alt="Logotipo do Site">
+                    <ul class="navbar">
+                        <li>
+                            <a href="./index.html">
+                                Início
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./historia.html">História</a>    
+                        </li>
+                        <li class="agora">Cadastro
+                        </li>
+                        <li >
+                            <a href="./login.html">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--header fim-->
+
+        <div class="container ">
+            <div class="card medio">
+                <h2>Bem-vindo!</h2>
+                <div class="formulario">
+                    <form id="form_cadastro" onsubmit="return cadastrar()">
+                        Nome:
+                        <input name="nome" type="text" placeholder="Insira seu nome">
+                        <br>
+                        E-mail:
+                        <input name="email" type="text" placeholder="exemplo@exemplo.com">
+                        <br>
+                        Senha:
+                        <input name="senha" type="password" placeholder="*********">
+                        <br>
+                        Confirmação da Senha:
+                        <input name="confirmacao-senha" type="password" placeholder="*********">
+                        <br>
+                        Perssonagem Preferido:
+                        <select name="area" id="">
+                            <option value="">Selecione o seu perssonagem favorito...</option>
+                            <option value="10">Elesis</option>
+                            <option value="11">Lire</option>
+                            <option value="12">Arme</option>
+                            <option value="13">Lass</option>
+                            <option value="14">Ryan</option>
+                            <option value="15">Ronan</option>
+                            <option value="16">Jin</option>
+                            <option value="17">Sieghart</option>
+                            <option value="18">Mari</option>
+                            <option value="19">Dio</option>
+                            <option value="20">Zero</option>
+                            <option value="21">Rey</option>
+                            <option value="22">Lupus</option>
+                            <option value="23">Lin</option>
+                            <option value="24">Azin</option>
+                            <option value="25">Holy</option>
+                            <option value="26">Edel</option>
+                            <option value="27">Veigas</option>
+                            <option value="28">Uno</option>
+                        </select>
+                        <br>
+                        <button class="btn">Cadastrar</button>
+                    </form>
+                
+                    <p>Já somos <span id="metrica"></span> todos da tropa Grand Chease :)</p>
+
+                </div>
+                <div id="div_aguardar" class="loading-div">
+                    <img src="./assets/circle-loading2.gif" id="loading-gif">
+                </div>
+
+                <div id="div_erros_login">
+                    
+                </div>
+            </div>
+        </div>
+        <!--footer inicio-->
+        <div class="footer_login">
+            <div class="container">
+                <h4>GranMania &copy; 2022</h4>
+            </div>
+        </div>
+        <!--footer fim-->
+    </div>
+
+    
+
+</body>
+
+</html>
+
+<script>
+
+    function limparFormulario() {
+        document.getElementById("form_cadastro").reset();
+    }
+
+    function cadastrar() {
+        aguardar();
+
+        var formulario = new URLSearchParams(new FormData(document.getElementById("form_cadastro")));
+
+        var nome = formulario.get("nome");
+        var email = formulario.get("email");
+        var senha = formulario.get("senha");
+        var confirmacaoSenha = formulario.get("confirmacao-senha");
+        var area = formulario.get("area");
+
+        // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
+        if (nome == "" || email == "" || senha == "" || confirmacaoSenha == "" || area == "") {
+            
+            window.alert("Preencha todos os campos para prosseguir!");
+            if (nome == "")  {
+                console.log('nome está em branco')
+            }
+            if (email == "" )  {
+                console.log('email está em branco')
+            }
+            if (senha == "" )  {
+                console.log('senha está em branco')
+            }
+            if (confirmacaoSenha == "" )  {
+                console.log('confirmacaoSenha está em branco')
+            }
+            if (area == ""){
+                console.log('area não foi selecionada')
+            }
+            finalizarAguardar();
+            return false;
+        }
+        
+        if (email.indexOf("@") == -1 || email.indexOf(".com") == -1) {
+            window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
+            finalizarAguardar();
+            return false;
+        }
+        
+        if (senha != confirmacaoSenha) {
+            window.alert("As senhas inseridas devem ser iguais para prosseguir!");
+            finalizarAguardar();
+            return false;
+        }
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                window.alert("Cadastro realizado com sucesso!");
+                window.location = "login.html";
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+    
+
+    }
+
+
+    function tudo(){
+    fetch("usuarios/listar", {
+    method: "GET",
+}).then(function (resposta) {
+
+
+    resposta.json().then(function (data){
+        let len = data.length;
+        metrica.innerHTML = len;
+        
+    });
+}).catch(function(error){
+    console.error(`ERROR`, error);
+});
+}
+</script>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GranMania | Altar da Ruina</title>
+
+    <script src="./assets/js/funcoes.js"></script>
+
+    <link rel="icon" href="./assets/icon/icon_gc.png">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<div class="guerra">
+    <div class="container_sant">
+
+        <h1>Bem vindo ao Altar da Ruina, aqui você poderá cravar batalhas intensas entre personagens do GrandChease
+           !</h1>
+
+        <div class="campo">
+            <div class="container_campo">
+                <h2>Batalha De Cazeaje!</h2>
+                <!-- Informe seu nome:<input class="input_sant" id="in_nome" placeholder="Guilherme"><br><br> -->
+
+                Primeiro Personagem:<select class="select_sant" name="" id="in_ouro1">
+                    <option value="0">Selecione</option>
+                    <option value="">Elesis</option>
+                    <option value="">Lire</option>
+                    <option value="">Arme</option>
+                    <option value="">Lass</option>
+                    <option value="">Ryan</option>
+                    <option value="">Ronan</option>
+                    <option value="">Jin</option>
+                    <option value="">Sieghart</option>
+                    <option value="">Mari</option>
+                    <option value="">Dio</option>
+                    <option value="">Zero</option>
+                    <option value="">Rey</option>
+                    <option value="">Lupus</option>
+                    <option value="">Lin</option>
+                    <option value="">Azin</option>
+                    <option value="">Holy</option>
+                    <option value="">Edel</option>
+                    <option value="">Veigas</option>
+                    <option value="">Uno</option>
+                </select><br><br>
+
+                Segundo Personagem:<select class="select_sant" name="" id="in_ouro2">
+                    <option value="0">Selecione</option>
+                    <option value="">Elesis</option>
+                    <option value="">Lire</option>
+                    <option value="">Arme</option>
+                    <option value="">Lass</option>
+                    <option value="">Ryan</option>
+                    <option value="">Ronan</option>
+                    <option value="">Jin</option>
+                    <option value="">Sieghart</option>
+                    <option value="">Mari</option>
+                    <option value="">Dio</option>
+                    <option value="">Zero</option>
+                    <option value="">Rey</option>
+                    <option value="">Lupus</option>
+                    <option value="">Lin</option>
+                    <option value="">Azin</option>
+                    <option value="">Holy</option>
+                    <option value="">Edel</option>
+                    <option value="">Veigas</option>
+                    <option value="">Uno</option>
+                </select><br><br>
+
+                <button class="botao_sant" onclick="batalha()">Lutem</button>
+
+            </div>
+
+            <div class="imagens_gc">
+                <img src="" width="300px" id="img1">
+                <span class="vs" id="vs"></span>
+                <img src="" width="300px" id="img2">
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>
+<script>
+
+function batalha() {
+
+    // var cavaleiro1 = in_ouro1.value;
+    // var cavaleiro2 = in_ouro2.value;
+
+
+    if (in_ouro1.value == "0" || in_ouro2.value == "0") {
+        alert('Preencha todos os campos!')
+    }
+    else {
+        img1.src = `imgs/${in_ouro1.value}`
+        vs.innerHTML = "VERSUS."
+        img2.src = `imgs/${in_ouro2.value}`
+    }
+
+    // in_nome.value = '';
+    in_ouro1.value = 0;
+    in_ouro2.value = 0;
+    
+    }
