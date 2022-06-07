@@ -170,18 +170,34 @@
         }
         fetch("/usuarios/cadastrar", {
             method: "POST",
-            body: formulario
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                
+                nomeServer: nome,
+                emailServer: email,
+                senhaServer: senha,
+                areaServer: area
+            })
         }).then(function (resposta) {
 
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                window.alert("Cadastro realizado com sucesso!");
-                window.location = "login.html";
+                msg_erro.innerHTML="Cadastro realizado com sucesso! Aguarde...";
+                aguardar();
+                setTimeout(function () {
+                
+
+                window.location.href = "./telaLogin.html";
                 limparFormulario();
                 finalizarAguardar();
+            }, 5000);
             } else {
-                throw("Houve um erro ao tentar realizar o cadastro!");
+                throw (msg_erro.innerHTML="Houve um erro ao tentar realizar o cadastro!");
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
@@ -189,9 +205,13 @@
         });
 
         return false;
-    
-
     }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+       
 
 
     function tudo(){
