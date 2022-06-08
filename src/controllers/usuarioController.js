@@ -60,10 +60,10 @@ function entrar (req, res) {
 }
 
 function cadastrar(req, res) {
-    var nome = req.body.nome;
-    var email = req.body.email;
-    var senha = req.body.senha;
-    var Area = req.body.area;
+    var nome = req.body.nomeServer;
+    var email = req.body.emailServer;
+    var senha = req.body.senhaServer;
+    var Area = req.body.areaServer;
 
     if (nome == undefined) {
         res.status(400).send("Seu nome está undefined!");
